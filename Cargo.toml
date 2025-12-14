@@ -37,10 +37,11 @@ exclude = [
 ]
 
 [build-dependencies]
+bindgen = "0.69"
 
 [dependencies]
 tokio = { version = "1.0", features = ["full"] }
-reqwest = { version = "0.12", features = ["json", "stream", "multipart"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "stream", "multipart", "rustls-tls"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 url = "2.4"
@@ -67,7 +68,6 @@ reqwest-middleware = { version = "0.4.2", features = ["multipart"] }
 reqwest-retry = "0.7.0"
 strum = { version = "0.27.2", features = ["strum_macros"] }
 secrecy = "0.10.3"
-openssl = { version = "0.10", features = ["vendored"] }
 
 [dev-dependencies]
 tokio-test = "0.4"
